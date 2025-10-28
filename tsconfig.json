@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@web-service/backend/*": ["./backend/src/*"]
+    }
+  },
+  "references": [
+    { "path": "./webapp" },
+    { "path": "./backend" }
+  ]
+}

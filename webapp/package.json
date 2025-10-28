@@ -1,5 +1,5 @@
 {
-  "name": "webapp",
+  "name": "@web-service/webapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' \"!**/{node_modules,dist}/**/*\"",
+    "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.5",
+    "@trpc/client": "^11.7.0",
+    "@trpc/react-query": "^11.7.0",
+    "@web-service/backend": "workspace:*",
+    "path": "^0.12.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
@@ -23,6 +30,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
