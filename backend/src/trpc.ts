@@ -12,7 +12,6 @@ const trpc = initTRPC.create()
 
 export const trpcRouter = trpc.router({
   getPersons: trpc.procedure.query(() => {
-    throw new Error('Not implemented')
     return { persons }
   }),
 })
