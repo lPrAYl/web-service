@@ -1,0 +1,5 @@
+#pnpm --filter @web-service/backend lint
+#pnpm --filter @web-service/webapp lint
+
+pnpm lint-staged
+pnpm types
