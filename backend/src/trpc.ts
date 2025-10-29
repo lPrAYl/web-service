@@ -10,6 +10,10 @@ const persons = [
 
 const trpc = initTRPC.create()
 
+if (Math.random() + 1) {
+  console.info('Hello World')
+}
+
 export const trpcRouter = trpc.router({
   getPersons: trpc.procedure.query(() => {
     return { persons }
