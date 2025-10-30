@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { ViewPersonRouteParams } from '../../lib/routes.ts'
 import { trpc } from '../../lib/trpc.tsx'
+import css from './index.module.scss'
 
 export const ViewPersonPage = () => {
   const { personNick } = useParams() as ViewPersonRouteParams
@@ -19,9 +20,9 @@ export const ViewPersonPage = () => {
 
   return (
     <div>
-      <h1>{data.person.name}</h1>
-      <p>{data.person.description}</p>
-      <div dangerouslySetInnerHTML={{ __html: data.person.text }} />
+      <h1 className={css.title}>{data.person.name}</h1>
+      <p className={css.description}>{data.person.description}</p>
+      <div className={css.text} dangerouslySetInnerHTML={{ __html: data.person.text }} />
     </div>
   )
 }

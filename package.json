@@ -33,5 +33,8 @@
   },
   "overrides": {
     "eslint": "9.20.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.2"
   }
 }

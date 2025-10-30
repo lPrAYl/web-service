@@ -4,6 +4,7 @@ import { getAllPersonsRoute, getViewPersonsRoute, viewPersonRouteParams } from '
 import { TrpcProvider } from './lib/trpc'
 import { AllPersonsPage } from './pages/AllPersonsPage'
 import { ViewPersonPage } from './pages/ViewPersonPage'
+import './styles/global.scss'
 
 export const App = () => {
   return (
