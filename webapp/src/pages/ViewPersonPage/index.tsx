@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
+import { ViewPersonRouteParams } from '../../lib/routes.ts'
 
 export const ViewPersonPage = () => {
-  const { personNick } = useParams() as { personNick: string }
+  const { personNick } = useParams() as ViewPersonRouteParams
   return (
     <div>
       <h1>{personNick}</h1>

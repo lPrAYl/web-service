@@ -1,2 +1,9 @@
+const getRouteParams = <T extends Record<string, boolean>>(object: T) => {
+  return Object.keys(object).reduce((acc, key) => ({ ...acc, [key]: `:${key}` }), {}) as Record<keyof T, string>
+}
+
 export const getAllPersonsRoute = () => '/'
-export const getViewPersonsRoute = ({ personNick }: { personNick: string }) => `/persons/${personNick}`
+
+export const viewPersonRouteParams = getRouteParams({ personNick: true })
+export type ViewPersonRouteParams = typeof viewPersonRouteParams
+export const getViewPersonsRoute = ({ personNick }: ViewPersonRouteParams) => `/persons/${personNick}`
