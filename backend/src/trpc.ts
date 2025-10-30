@@ -1,12 +1,12 @@
 import { initTRPC } from '@trpc/server'
+import _ from 'lodash'
 
-const persons = [
-  { nick: 'cool-person-nick-1', name: 'Person 1', description: 'Description of person 1...' },
-  { nick: 'cool-person-nick-2', name: 'Person 2', description: 'Description of person 2...' },
-  { nick: 'cool-person-nick-3', name: 'Person 3', description: 'Description of person 3...' },
-  { nick: 'cool-person-nick-4', name: 'Person 4', description: 'Description of person 4...' },
-  { nick: 'cool-person-nick-5', name: 'Person 5', description: 'Description of person 5...' },
-]
+const persons = _.times(100, (i) => ({
+  nick: `cool-person-nick-${i}`,
+  name: `Person ${i}`,
+  description: `Description of person ${i}...`,
+  text: _.times(100, (j) => `<p>Text paragraph ${j} of person ${i}...</p>`).join(''),
+}))
 
 const trpc = initTRPC.create()
 
@@ -16,7 +16,7 @@ if (Math.random() + 1) {
 
 export const trpcRouter = trpc.router({
   getPersons: trpc.procedure.query(() => {
-    return { persons }
+    return { persons: persons.map((person) => _.pick(person, ['nick', 'name', 'description'])) }
   }),
 })
 
