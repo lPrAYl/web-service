@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { getViewPersonsRoute } from '../../lib/routes.ts'
 import { trpc } from '../../lib/trpc.tsx'
 
 export const AllPersonsPage = () => {
@@ -16,7 +18,9 @@ export const AllPersonsPage = () => {
       {data?.persons.map((person) => {
         return (
           <div key={person.nick}>
-            <h2>{person.name}</h2>
+            <h2>
+              <Link to={getViewPersonsRoute({ personNick: person.nick })}>{person.name}</Link>
+            </h2>
             <p>{person.description}</p>
           </div>
         )
