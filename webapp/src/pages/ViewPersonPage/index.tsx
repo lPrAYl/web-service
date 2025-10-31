@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { Segment } from '../../components/Segment'
 import { ViewPersonRouteParams } from '../../lib/routes.ts'
 import { trpc } from '../../lib/trpc.tsx'
 import css from './index.module.scss'
@@ -19,10 +20,8 @@ export const ViewPersonPage = () => {
   }
 
   return (
-    <div>
-      <h1 className={css.title}>{data.person.name}</h1>
-      <p className={css.description}>{data.person.description}</p>
+    <Segment title={data.person.name} description={data.person.description}>
       <div className={css.text} dangerouslySetInnerHTML={{ __html: data.person.text }} />
-    </div>
+    </Segment>
   )
 }

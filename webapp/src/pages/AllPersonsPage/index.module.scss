@@ -1,29 +1,18 @@
 @import '../../styles/_vars.scss';
 @import '../../styles/_mixins.scss';
 
-.title {
-  @include h1;
-}
-
 .persons {
   .person {
     padding: 20px;
     border: 1px solid $black;
     border-radius: 10px;
+
     & + .person {
       margin-top: 20px;
     }
 
-    .personName {
-      @include h2;
-
-      .personLink {
-        @include link;
-      }
-    }
-
-    .personDescription {
-      font-size: 18px;
+    .personLink {
+      @include link;
     }
   }
 }
