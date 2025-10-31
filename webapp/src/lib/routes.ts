@@ -7,3 +7,5 @@ export const getAllPersonsRoute = () => '/'
 export const viewPersonRouteParams = getRouteParams({ personNick: true })
 export type ViewPersonRouteParams = typeof viewPersonRouteParams
 export const getViewPersonsRoute = ({ personNick }: ViewPersonRouteParams) => `/persons/${personNick}`
+
+export const getNewPersonRoute = () => '/persons/new'

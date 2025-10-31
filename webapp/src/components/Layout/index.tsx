@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
-import { getAllPersonsRoute } from '../../lib/routes.ts'
+import { getAllPersonsRoute, getNewPersonRoute } from '../../lib/routes.ts'
 import css from './index.module.scss'
 
 export const Layout = () => {
@@ -11,6 +11,11 @@ export const Layout = () => {
           <li className={css.item}>
             <Link className={css.link} to={getAllPersonsRoute()}>
               All Persons
+            </Link>
+          </li>
+          <li className={css.item}>
+            <Link className={css.link} to={getNewPersonRoute()}>
+              Add Person
             </Link>
           </li>
         </ul>
